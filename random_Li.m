@@ -1,8 +1,7 @@
-function getrandom=random_Li(L_number,r,h)
+function [S,interf_matrix]=random_Li(L_number,r,h)
 %%
-%获得random channel 矩阵，对应S，为L_number*h的矩阵
+%获得random channel 矩阵，对应S，为L_number*h的矩阵，r为radio数目
 S=binornd(1,r/h,[L_number h]);
-% S
 %%
 %获取每个Link的中心位置与半径矩阵，对应location与radius(length)
 %默认分布空间1000*1000
@@ -73,6 +72,6 @@ for i_for_interference=1:L_number
     end
 end
 % interf_matrix
- %%
- %获得xijk矩阵
+% size(interf_matrix)
+
  
