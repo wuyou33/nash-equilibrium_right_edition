@@ -5,12 +5,12 @@ S=binornd(1,r/h,[L_number h]);
 %%
 %获取每个Link的中心位置与半径矩阵，对应location与radius(length)
 %默认分布空间1000*1000
-location=int16(unifrnd(0,100,[2 L_number]));
-x=location(1,:);
-y=location(2,:);
-figure
-hold on
-scatter(x,y,'Y');
+location=int16(unifrnd(0,1000,[2 L_number]));
+% x=location(1,:);
+% y=location(2,:);
+% figure
+% hold on
+% scatter(x,y,'Y');
 radius=int16(unifrnd(1,30,[1 L_number]));
 theta=unifrnd(0,2*pi,[1 L_number]);
 deta(2,L_number)=0;
@@ -31,9 +31,9 @@ for i_for_location=1:L_number
 end
 %%
 %验证位置 ：ok
-scatter(v_location(1,:),v_location(2,:),'G')
-scatter(u_location(1,:),u_location(2,:),'filled')
-hold off
+% scatter(v_location(1,:),v_location(2,:),'G')
+% scatter(u_location(1,:),u_location(2,:),'filled')
+% hold off
 %%
 %设定干扰范围,2倍link长度(ok),获得干扰矩阵，并非为一个对称阵，其干扰与自身半径相关
 interf_matrix=zeros(L_number);

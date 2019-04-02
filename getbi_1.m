@@ -1,4 +1,4 @@
-function S_temp=getbi(S,interferematrix,numberofplayer)
+function S_temp=getbi_1(S,interferematrix,numberofplayer)
 %%
 [row_num,col_num]=size(S);
 %计算每个C的权值
@@ -11,11 +11,11 @@ for iterforchannel=1:col_num
         weight(iterforchannel)=weight(iterforchannel)+dot(S(iterforinterfere_1,:),e_k);
         e_k(iterforchannel)=0;
     end
-    if interferematrix(numberofplayer,iterforinterfere_1)==1
-         e_k(iterforchannel)=1;
-         weight(iterforchannel)=weight(iterforchannel)+dot(S(iterforinterfere_1,:),e_k);
-         e_k(iterforchannel)=0;
-    end
+%     if interferematrix(numberofplayer,iterforinterfere_1)==1
+%          e_k(iterforchannel)=1;
+%          weight(iterforchannel)=weight(iterforchannel)+dot(S(iterforinterfere_1,:),e_k);
+%          e_k(iterforchannel)=0;
+%     end
     end
 end
 [weight_result,ind]=sort(weight);
